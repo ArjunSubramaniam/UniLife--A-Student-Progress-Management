@@ -8,7 +8,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { getAssignments, saveAssignments, type Assignment } from '@/utils/storage';
-import { Plus, Edit, Trash2, CheckCircle2, Circle, Clock } from 'lucide-react';
+import { Plus, Edit, Trash2, CheckCircle2, Circle } from 'lucide-react';
 import { format, isPast, isToday, parseISO } from 'date-fns';
 
 export default function Assignments() {
@@ -75,9 +75,10 @@ export default function Assignments() {
   };
 
   const handleToggleStatus = (id: string) => {
-    const updated = assignments.map(a => {
+    const updated: Assignment[] = assignments.map(a => {
       if (a.id === id) {
-        const newStatus = a.status === 'completed' ? 'pending' : 'completed';
+        const newStatus: Assignment['status'] =
+          a.status === 'completed' ? 'pending' : 'completed';
         return { ...a, status: newStatus, updatedAt: new Date().toISOString() };
       }
       return a;

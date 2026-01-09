@@ -7,12 +7,10 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { useTheme } from '@/hooks/use-theme';
 import { resetAllData } from '@/utils/storage';
 import { AlertTriangle, Moon, Sun } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 export default function Settings() {
   const { theme, setTheme } = useTheme();
   const [isResetDialogOpen, setIsResetDialogOpen] = useState(false);
-  const navigate = useNavigate();
 
   const handleReset = () => {
     resetAllData();

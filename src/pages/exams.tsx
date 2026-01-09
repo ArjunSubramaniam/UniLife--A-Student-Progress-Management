@@ -3,13 +3,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { getExams, saveExams, type Exam } from '@/utils/storage';
 import { Plus, Edit, Trash2, Clock, MapPin } from 'lucide-react';
-import { format, parseISO, differenceInDays, differenceInHours, differenceInMinutes, isPast } from 'date-fns';
+import { format, differenceInDays, differenceInHours, differenceInMinutes, isPast } from 'date-fns';
 
 export default function Exams() {
   const [exams, setExams] = useState<Exam[]>(() => {

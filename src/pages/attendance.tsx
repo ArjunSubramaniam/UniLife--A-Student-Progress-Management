@@ -2,11 +2,10 @@ import { useState, useMemo } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { getAttendanceRecords, saveAttendanceRecords, type AttendanceRecord } from '@/utils/storage';
-import { Plus, CheckCircle2, XCircle, AlertCircle } from 'lucide-react';
-import { format, isToday } from 'date-fns';
+import { CheckCircle2, XCircle, AlertCircle } from 'lucide-react';
+import { format } from 'date-fns';
 
 export default function Attendance() {
   const [records, setRecords] = useState<AttendanceRecord[]>(() => getAttendanceRecords());
